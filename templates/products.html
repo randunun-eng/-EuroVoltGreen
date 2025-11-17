@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+
+{% block title %}{{ get_translation('products_title', language) }} - {{ get_translation('company_name', language) }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='js/360viewer.js') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>{{ get_translation('products_title', language) }}</h1>
+                <p class="lead">Innovative solar equipment for sustainable energy solutions</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Categories -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs justify-content-center mb-5" id="productTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#hybrid-inverters">
+                            <i class="fas fa-bolt me-2"></i>Hybrid Inverters
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#ongrid-inverters">
+                            <i class="fas fa-plug me-2"></i>On-grid Inverters
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#offgrid-inverters">
+                            <i class="fas fa-battery-full me-2"></i>Off-grid Inverters
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#mppt-controllers">
+                            <i class="fas fa-microchip me-2"></i>MPPT Solar Charge Controller
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#pwm-controllers">
+                            <i class="fas fa-cog me-2"></i>PWM Solar Charge Controller
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <!-- Hybrid Inverters -->
+            <div class="tab-pane fade show active" id="hybrid-inverters">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>Advanced Hybrid Solar Inverters</h2>
+                        <p class="lead">Precision-engineered inverters with integrated MPPT, battery management, and intelligent grid-tie technology</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    {% for inverter in hybrid_inverters %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image-360" data-product="{{ inverter.name }}">
+                                <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg" 
+                                     alt="{{ inverter.name }}" class="img-fluid">
+                                <div class="rotation-indicator">
+                                    <i class="fas fa-sync-alt"></i> 360° View
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ inverter.name }}</h5>
+                                <div class="product-specs">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <small class="text-muted">Power</small>
+                                            <p class="mb-1"><strong>{{ inverter.power }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Voltage</small>
+                                            <p class="mb-1"><strong>{{ inverter.voltage }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Efficiency</small>
+                                            <p class="mb-1"><strong>{{ inverter.efficiency }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Warranty</small>
+                                            <p class="mb-1"><strong>5 years</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-features">
+                                    <h6>Key Features:</h6>
+                                    <ul class="list-unstyled">
+                                        {% for feature in inverter.features %}
+                                        <li><i class="fas fa-check text-success me-2"></i>{{ feature }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#productModal" 
+                                        data-product="{{ inverter.name }}">
+                                    <i class="fas fa-info-circle me-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- On-grid Inverters -->
+            <div class="tab-pane fade" id="ongrid-inverters">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>On-grid Solar Inverters</h2>
+                        <p class="lead">High-efficiency grid-tie inverters with IP65 protection and advanced monitoring</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    {% for inverter in ongrid_inverters %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg" 
+                                     alt="{{ inverter.name }}" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ inverter.name }}</h5>
+                                <div class="product-specs">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <small class="text-muted">Power</small>
+                                            <p class="mb-1"><strong>{{ inverter.power }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Voltage</small>
+                                            <p class="mb-1"><strong>{{ inverter.voltage }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Efficiency</small>
+                                            <p class="mb-1"><strong>{{ inverter.efficiency }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">MPPT Range</small>
+                                            <p class="mb-1"><strong>{{ inverter.mppt_range }}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-features">
+                                    <h6>Key Features:</h6>
+                                    <ul class="list-unstyled">
+                                        {% for feature in inverter.features %}
+                                        <li><i class="fas fa-check text-success me-2"></i>{{ feature }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="fas fa-info-circle me-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Off-grid Inverters -->
+            <div class="tab-pane fade" id="offgrid-inverters">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>Off-grid Solar Inverters</h2>
+                        <p class="lead">Pure sine wave inverters with UPS function and high motor starting capacity</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    {% for inverter in offgrid_inverters %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg" 
+                                     alt="{{ inverter.name }}" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ inverter.name }}</h5>
+                                <div class="product-specs">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <small class="text-muted">Power</small>
+                                            <p class="mb-1"><strong>{{ inverter.power }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Voltage</small>
+                                            <p class="mb-1"><strong>{{ inverter.voltage }}</strong></p>
+                                        </div>
+                                        {% if inverter.efficiency %}
+                                        <div class="col-6">
+                                            <small class="text-muted">Efficiency</small>
+                                            <p class="mb-1"><strong>{{ inverter.efficiency }}</strong></p>
+                                        </div>
+                                        {% endif %}
+                                        {% if inverter.mppt_range %}
+                                        <div class="col-6">
+                                            <small class="text-muted">MPPT Range</small>
+                                            <p class="mb-1"><strong>{{ inverter.mppt_range }}</strong></p>
+                                        </div>
+                                        {% endif %}
+                                        {% if inverter.price %}
+                                        <div class="col-6">
+                                            <small class="text-muted">Price</small>
+                                            <p class="mb-1"><strong>{{ inverter.price }}</strong></p>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="product-features">
+                                    <h6>Key Features:</h6>
+                                    <ul class="list-unstyled">
+                                        {% for feature in inverter.features %}
+                                        <li><i class="fas fa-check text-success me-2"></i>{{ feature }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="fas fa-info-circle me-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- MPPT Controllers -->
+            <div class="tab-pane fade" id="mppt-controllers">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>MPPT Solar Charge Controllers</h2>
+                        <p class="lead">Maximum Power Point Tracking controllers with advanced algorithms and high efficiency</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    {% for controller in mppt_controllers %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg" 
+                                     alt="{{ controller.name }}" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ controller.name }}</h5>
+                                <div class="product-specs">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <small class="text-muted">Current</small>
+                                            <p class="mb-1"><strong>{{ controller.current }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Voltage</small>
+                                            <p class="mb-1"><strong>{{ controller.voltage }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Efficiency</small>
+                                            <p class="mb-1"><strong>{{ controller.efficiency }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">MPPT Range</small>
+                                            <p class="mb-1"><strong>{{ controller.mppt_range }}</strong></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <small class="text-muted">Warranty</small>
+                                            <p class="mb-1"><strong>{{ controller.warranty }}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-features">
+                                    <h6>Key Features:</h6>
+                                    <ul class="list-unstyled">
+                                        {% for feature in controller.features %}
+                                        <li><i class="fas fa-check text-success me-2"></i>{{ feature }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="fas fa-info-circle me-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- PWM Controllers -->
+            <div class="tab-pane fade" id="pwm-controllers">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>PWM Solar Charge Controllers</h2>
+                        <p class="lead">Reliable and cost-effective Pulse Width Modulation controllers for various applications</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    {% for controller in pwm_controllers %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg" 
+                                     alt="{{ controller.name }}" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ controller.name }}</h5>
+                                <div class="product-specs">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <small class="text-muted">Current</small>
+                                            <p class="mb-1"><strong>{{ controller.current }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <small class="text-muted">Voltage</small>
+                                            <p class="mb-1"><strong>{{ controller.voltage }}</strong></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <small class="text-muted">Warranty</small>
+                                            <p class="mb-1"><strong>{{ controller.warranty }}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-features">
+                                    <h6>Key Features:</h6>
+                                    <ul class="list-unstyled">
+                                        {% for feature in controller.features %}
+                                        <li><i class="fas fa-check text-success me-2"></i>{{ feature }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="fas fa-info-circle me-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Features -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2>Why Choose Eurovolt Products?</h2>
+                <p class="lead">Quality, innovation, and reliability in every product</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="feature-item text-center">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h5>Quality Assurance</h5>
+                    <p>Rigorous testing and quality control processes</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="feature-item text-center">
+                    <i class="fas fa-tools fa-3x text-success mb-3"></i>
+                    <h5>Easy Installation</h5>
+                    <p>User-friendly design for quick and safe installation</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="feature-item text-center">
+                    <i class="fas fa-headset fa-3x text-info mb-3"></i>
+                    <h5>24/7 Support</h5>
+                    <p>Comprehensive technical support and customer service</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="feature-item text-center">
+                    <i class="fas fa-award fa-3x text-warning mb-3"></i>
+                    <h5>5-Year Warranty</h5>
+                    <p>Extended warranty coverage for peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Modal -->
+<div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalTitle">Product Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="productModalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{{ url_for('contact', lang=language) }}" class="btn btn-primary">Request Quote</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/360viewer.js') }}"></script>
+{% endblock %}
