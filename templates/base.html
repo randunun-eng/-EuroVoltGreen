@@ -50,14 +50,14 @@
                 <div class="dropdown me-3">
                     <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
                         <i class="fas fa-globe"></i>
-                        {% if language == 'zh' %}中文{% else %}English{% endif %}
+                        {% if language == 'zh' %}中文{% elif language == 'es' %}Español{% elif language == 'de' %}Deutsch{% elif language == 'fr' %}Français{% else %}English{% endif %}
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="?lang=en">English</a></li>
-                        <li><a class="dropdown-item" href="?lang=zh">中文</a></li>
-                        <li><a class="dropdown-item" href="?lang=es">Español</a></li>
-                        <li><a class="dropdown-item" href="?lang=de">Deutsch</a></li>
-                        <li><a class="dropdown-item" href="?lang=fr">Français</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='en') }}">English</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='zh') }}">中文</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='es') }}">Español</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='de') }}">Deutsch</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='fr') }}">Français</a></li>
                     </ul>
                 </div>
                 

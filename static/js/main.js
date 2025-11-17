@@ -294,11 +294,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Active navigation highlighting
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    navLinks.forEach(link => {
+        const linkPath = new URL(link.href).pathname;
+
+        // Check if this is the current page
+        if (currentPath === linkPath || (currentPath === '/' && linkPath === '/')) {
+            link.classList.add('active');
+            link.style.fontWeight = 'bold';
+        }
+    });
+
     // Language switcher enhancement
     const languageDropdown = document.querySelector('.dropdown-menu');
     if (languageDropdown) {
         languageDropdown.addEventListener('click', function(e) {
             if (e.target.classList.contains('dropdown-item')) {
+                e.preventDefault(); // Prevent default href navigation
                 const currentUrl = new URL(window.location);
                 const langCode = e.target.getAttribute('href').split('lang=')[1];
                 currentUrl.searchParams.set('lang', langCode);
