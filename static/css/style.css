@@ -97,7 +97,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-secondary);
+    color: #d1d5db;
     margin-bottom: 2rem;
     font-weight: 400;
 }
@@ -187,6 +187,16 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
+}
+
+.product-card h5,
+.product-card h6,
+.product-card p,
+.product-card .card-title,
+.product-card strong,
+.product-card li {
+    color: #000000 !important;
 }
 
 .product-card:hover {
@@ -249,11 +259,21 @@ body {
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 1rem;
+    color: #000000;
 }
 
 .product-specs .text-muted {
     font-size: 0.8rem;
     margin-bottom: 0;
+    color: #4b5563 !important;
+}
+
+.product-specs strong {
+    color: #000000 !important;
+}
+
+.product-specs small {
+    color: #6b7280 !important;
 }
 
 /* Partners */
@@ -340,6 +360,16 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    color: #000000;
+}
+
+.timeline-card h3,
+.timeline-card h4,
+.timeline-card h5,
+.timeline-card h6,
+.timeline-card p,
+.timeline-card li {
+    color: #000000 !important;
 }
 
 .timeline-card:hover {
@@ -359,6 +389,15 @@ body {
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
+}
+
+.innovation-card h4,
+.innovation-card h5,
+.innovation-card h6,
+.innovation-card p,
+.innovation-card li {
+    color: #000000 !important;
 }
 
 .innovation-card:hover {
@@ -404,6 +443,13 @@ body {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #000000;
+}
+
+.partnership-timeline h4,
+.partnership-timeline h5,
+.partnership-timeline p {
+    color: #000000 !important;
 }
 
 .partnership-year {
@@ -432,6 +478,13 @@ body {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #000000;
+}
+
+.growth-metrics h4,
+.growth-metrics h5,
+.growth-metrics p {
+    color: #000000 !important;
 }
 
 .metric-item {
@@ -449,7 +502,7 @@ body {
 }
 
 .metric-label {
-    color: var(--text-secondary);
+    color: #4b5563 !important;
     font-weight: 500;
 }
 
@@ -711,6 +764,13 @@ body {
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
+}
+
+.contact-info-card h5,
+.contact-info-card p,
+.contact-info-card a {
+    color: #000000 !important;
 }
 
 .contact-info-card:hover {
@@ -733,6 +793,14 @@ body {
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
+}
+
+.timezone-card h5,
+.timezone-card h6,
+.timezone-card p,
+.timezone-card small {
+    color: #000000 !important;
 }
 
 .timezone-card:hover {
@@ -755,6 +823,14 @@ body {
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
+}
+
+.manufacturing-stat h4,
+.manufacturing-stat h5,
+.manufacturing-stat p,
+.manufacturing-stat .metric-value {
+    color: #000000 !important;
 }
 
 .manufacturing-stat:hover {
@@ -787,6 +863,12 @@ body {
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
+}
+
+.team-card h5,
+.team-card h6 {
+    color: #000000 !important;
 }
 
 .team-card:hover {
@@ -1000,6 +1082,31 @@ body {
     background: var(--gradient-primary);
 }
 
+/* Universal .bg-light Section Fixes - Comprehensive */
+.bg-light,
+.bg-light h1,
+.bg-light h2,
+.bg-light h3,
+.bg-light h4,
+.bg-light h5,
+.bg-light h6,
+.bg-light p,
+.bg-light li,
+.bg-light span,
+.bg-light .lead,
+.bg-light label,
+.bg-light div {
+    color: #000000 !important;
+}
+
+.bg-light .text-muted {
+    color: #6b7280 !important;
+}
+
+.bg-light .text-secondary {
+    color: #4b5563 !important;
+}
+
 /* Manufacturing Section with black text */
 section.py-5.bg-light h3,
 section.py-5.bg-light p.lead,
@@ -1051,7 +1158,16 @@ section.py-5.bg-light p.manufacturing-subtitle {
 }
 
 /* Mission section text - make black */
+.mission-card,
+.vision-card {
+    color: #000000;
+}
+
+.mission-card h3,
+.mission-card h4,
 .mission-card p,
+.vision-card h3,
+.vision-card h4,
 .vision-card p {
     color: #000000 !important;
 }
@@ -1101,4 +1217,60 @@ section.py-5.bg-light p.lead.innovation-text {
 
 .border-radius-xl {
     border-radius: 20px;
+}
+
+/* Accordion (FAQ) Styling for proper contrast */
+.accordion-item {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.accordion-button {
+    background-color: #f8f9fa !important;
+    color: #000000 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--eurovolt-green) !important;
+    color: #ffffff !important;
+}
+
+.accordion-body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.accordion-body p,
+.accordion-body li {
+    color: #000000 !important;
+}
+
+/* Card bodies - ensure all have proper text color */
+.card-body {
+    color: #000000;
+}
+
+.card-body h5,
+.card-body h6,
+.card-body p,
+.card-body li {
+    color: #000000 !important;
+}
+
+/* Service cards text visibility */
+.service-card h4,
+.service-card h5,
+.service-card p {
+    color: #ffffff !important;
+}
+
+/* Product preview cards - dark background */
+.product-preview-card .card-body {
+    color: #ffffff;
+}
+
+.product-preview-card .card-body h5,
+.product-preview-card .card-body p,
+.product-preview-card .card-body a {
+    color: #ffffff !important;
 }
