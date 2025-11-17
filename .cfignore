@@ -1,0 +1,16 @@
+# Cloudflare Pages - Ignore Python files during build
+pyproject.toml
+*.py
+__pycache__/
+*.pyc
+uv.lock
+venv/
+.venv/
+templates/
+models.py
+routes.py
+forms.py
+app.py
+main.py
+translations.py
+openai_service.py

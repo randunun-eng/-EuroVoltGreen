@@ -1,0 +1,11 @@
+{
+  "name": "eurovolt-green",
+  "version": "1.0.0",
+  "description": "EuroVolt Solar Electronics Manufacturing Website",
+  "scripts": {
+    "build": "chmod +x build.sh && ./build.sh"
+  },
+  "keywords": ["solar", "manufacturing", "static-site"],
+  "author": "EuroVolt",
+  "license": "MIT"
+}
