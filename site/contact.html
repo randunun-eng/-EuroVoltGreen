@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EuroVolt</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/eurovolt-logo.png" alt="Eurovolt" height="40">
+                EuroVolt
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">English</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                    </ul>
+                </div>
+
+                <!-- Chat Toggle -->
+                <button class="btn btn-success" id="chatToggle">
+                    <i class="fas fa-comments"></i> Chat
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1>Contact Us</h1>
+                        <p class="lead">Get in touch with our team for partnerships and inquiries</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="contact-form-container">
+                            <h2 class="text-center mb-4">Send Us a Message</h2>
+                            <form class="contact-form" id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="company" class="form-label">Company</label>
+                                        <input type="text" class="form-control" id="company" name="company">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="subject" class="form-label">Subject *</label>
+                                        <select class="form-control" id="subject" name="subject" required>
+                                            <option value="">Select a subject</option>
+                                            <option value="General Inquiry">General Inquiry</option>
+                                            <option value="Product Information">Product Information</option>
+                                            <option value="OEM/ODM Partnership">OEM/ODM Partnership</option>
+                                            <option value="Technical Support">Technical Support</option>
+                                            <option value="Sales Inquiry">Sales Inquiry</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="language" class="form-label">Preferred Language</label>
+                                        <select class="form-control" id="language" name="language">
+                                            <option value="en">English</option>
+                                            <option value="zh">中文 (Chinese)</option>
+                                            <option value="es">Español (Spanish)</option>
+                                            <option value="de">Deutsch (German)</option>
+                                            <option value="fr">Français (French)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Inquiry
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Contact Information</h2>
+                        <p class="lead">Multiple ways to reach our team</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="contact-info-card text-center p-4">
+                            <div class="contact-icon mb-3">
+                                <i class="fas fa-map-marker-alt fa-3x text-primary"></i>
+                            </div>
+                            <h5>Headquarters</h5>
+                            <p>Eurovolt Solar Technology Co., Ltd.<br>
+                            Building A, Hi-Tech Industrial Park<br>
+                            Nanshan District, Shenzhen<br>
+                            Guangdong, China 518000</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info-card text-center p-4">
+                            <div class="contact-icon mb-3">
+                                <i class="fas fa-phone fa-3x text-success"></i>
+                            </div>
+                            <h5>Phone & Fax</h5>
+                            <p><strong>Sales:</strong> +86 755 1234 5678<br>
+                            <strong>Technical:</strong> +86 755 1234 5679<br>
+                            <strong>Fax:</strong> +86 755 1234 5680<br>
+                            <strong>24/7 Support:</strong> +86 400 888 9999</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info-card text-center p-4">
+                            <div class="contact-icon mb-3">
+                                <i class="fas fa-envelope fa-3x text-info"></i>
+                            </div>
+                            <h5>Email Contacts</h5>
+                            <p><strong>General:</strong> info@eurovolt.com<br>
+                            <strong>Sales:</strong> sales@eurovolt.com<br>
+                            <strong>Technical:</strong> support@eurovolt.com<br>
+                            <strong>Partnerships:</strong> partners@eurovolt.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Hours & Time Zones -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Office Hours & Global Support</h2>
+                        <p class="lead">We're here to help across multiple time zones</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="timezone-card text-center p-4">
+                            <h5><i class="fas fa-globe-asia me-2"></i>Asia Pacific</h5>
+                            <p><strong>Shenzhen HQ</strong><br>
+                            Monday - Friday: 8:00 AM - 6:00 PM<br>
+                            Saturday: 9:00 AM - 5:00 PM<br>
+                            <small class="text-muted">GMT+8 (China Standard Time)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="timezone-card text-center p-4">
+                            <h5><i class="fas fa-globe-europe me-2"></i>Europe</h5>
+                            <p><strong>European Office</strong><br>
+                            Monday - Friday: 9:00 AM - 5:00 PM<br>
+                            Technical Support Available<br>
+                            <small class="text-muted">CET (Central European Time)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="timezone-card text-center p-4">
+                            <h5><i class="fas fa-globe-americas me-2"></i>Americas</h5>
+                            <p><strong>North America</strong><br>
+                            Monday - Friday: 8:00 AM - 5:00 PM<br>
+                            Sales & Support Available<br>
+                            <small class="text-muted">EST (Eastern Standard Time)</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>Find Us</h2>
+                        <p class="lead">Visit our headquarters in Shenzhen</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.2573871823596!2d113.9456!3d22.5333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340391b6bd00b65d%3A0x9b4fb1e4e3f4f4f4!2sNanshan%20District%2C%20Shenzhen%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Frequently Asked Questions</h2>
+                        <p class="lead">Quick answers to common inquiries</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        What is the minimum order quantity for OEM/ODM services?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Our minimum order quantity varies by product type. For solar inverters, it's typically 100 units, while for charge controllers, it starts from 500 units. Contact our sales team for specific requirements.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        What certifications do your products have?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        All our products are certified with CE, UL, TUV, and IEC standards. We also maintain ISO 9001 certification for our manufacturing processes.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        What is the typical lead time for orders?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Standard products: 15-30 days. OEM orders: 30-45 days. ODM projects: 45-90 days depending on complexity. Rush orders can be accommodated with additional costs.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        Do you provide technical support after purchase?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes, we offer comprehensive technical support including installation guidance, troubleshooting, and maintenance advice. Our support is available 24/7 through multiple channels.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>EuroVolt</h5>
+                    <p>Advanced Solar Electronics Manufacturing</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Shenzhen, China</p>
+                    <p><i class="fas fa-phone me-2"></i>+86 755 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@eurovolt.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-light">About</a></li>
+                        <li><a href="products.html" class="text-light">Products</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 EuroVolt. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <h6><i class="fas fa-robot"></i> Solar Assistant</h6>
+            <button class="btn-close btn-close-white" id="chatClose"></button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+            <div class="input-group">
+                <input type="text" class="form-control" id="chatInput" placeholder="Ask about our products...">
+                <button class="btn btn-primary" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>
+        // Basic form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && subject && message) {
+                alert('Thank you for your inquiry! We will contact you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>

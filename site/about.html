@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EuroVolt</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/eurovolt-logo.png" alt="Eurovolt" height="40">
+                EuroVolt
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">English</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                    </ul>
+                </div>
+
+                <!-- Chat Toggle -->
+                <button class="btn btn-success" id="chatToggle">
+                    <i class="fas fa-comments"></i> Chat
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1>About Us</h1>
+                        <p class="lead">Advanced solar electronics manufacturing - innovating beyond solar panels</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2>Our Story</h2>
+                        <p class="lead">Eurovolt specializes in manufacturing advanced solar electronics and power conversion equipment - everything except solar panels. Since our founding, we've been dedicated to creating the intelligent systems that make solar energy efficient and reliable.</p>
+                        <p>Based in Shenzhen, China's technology hub, we combine state-of-the-art manufacturing with intensive R&D to deliver precision-engineered solar inverters, MPPT charge controllers, and PWM charge controllers. Our advanced electronics optimize energy conversion, battery management, and grid integration.</p>
+                        <p>Through strategic partnerships with world-renowned brands like NET, POWMr, SUMRy, EASUN, MUST, and ANERN, we continue to expand our global reach and technological capabilities.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="images/factory-production.jpg"
+                             alt="EUROVOLT Solar Inverter Production Line" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mission-card p-4 h-100">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-bullseye fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="text-center">Our Mission</h3>
+                            <p>To accelerate global renewable energy adoption by manufacturing the most advanced solar electronics and power management systems, excluding panels. We focus on the intelligent components that maximize energy efficiency and system reliability.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="vision-card p-4 h-100">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-eye fa-3x text-success"></i>
+                            </div>
+                            <h3 class="text-center">Our Vision</h3>
+                            <p>To be the global leader in solar electronics manufacturing, recognized for breakthrough power conversion technology, intelligent energy management systems, and innovation in everything solar except the panels themselves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- R&D Excellence -->
+        <section id="rd-excellence" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>R&D Excellence</h2>
+                        <p class="lead innovation-text">Innovation drives everything we do</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="images/electronics-detail.jpg"
+                             alt="Advanced Solar Inverter Electronics" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Advanced Research Capabilities</h3>
+                        <p>Our dedicated R&D team works tirelessly to develop next-generation solar technologies. Our state-of-the-art research facilities include:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-microscope text-primary me-2"></i> Advanced materials testing laboratory</li>
+                            <li><i class="fas fa-bolt text-primary me-2"></i> Power electronics development center</li>
+                            <li><i class="fas fa-thermometer-half text-primary me-2"></i> Environmental testing chambers</li>
+                            <li><i class="fas fa-chart-line text-primary me-2"></i> Performance analysis systems</li>
+                            <li><i class="fas fa-robot text-primary me-2"></i> Automated testing equipment</li>
+                        </ul>
+                        <div class="row mt-4">
+                            <div class="col-4 text-center">
+                                <h4 class="text-primary">50+</h4>
+                                <small>R&D Engineers</small>
+                            </div>
+                            <div class="col-4 text-center">
+                                <h4 class="text-primary">25+</h4>
+                                <small>Patents Filed</small>
+                            </div>
+                            <div class="col-4 text-center">
+                                <h4 class="text-primary">15%</h4>
+                                <small>Revenue in R&D</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manufacturing Excellence -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Manufacturing Excellence</h2>
+                        <p class="lead manufacturing-subtitle">Quality and efficiency in every product</p>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <img src="images/assembly-line.jpg"
+                             alt="EUROVOLT Assembly Line - Precision Manufacturing" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Precision Assembly Process</h3>
+                        <p class="lead">Our skilled technicians ensure every solar inverter meets the highest quality standards through meticulous assembly and testing.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Hand-selected components and materials</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Multi-stage quality control testing</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Advanced circuit board assembly</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Professional manufacturing environment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="manufacturing-stat text-center p-4">
+                            <i class="fas fa-industry fa-3x text-primary mb-3"></i>
+                            <h4>50,000 m²</h4>
+                            <p>Manufacturing Facility</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="manufacturing-stat text-center p-4">
+                            <i class="fas fa-users fa-3x text-success mb-3"></i>
+                            <h4>500+</h4>
+                            <p>Skilled Employees</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="manufacturing-stat text-center p-4">
+                            <i class="fas fa-cogs fa-3x text-info mb-3"></i>
+                            <h4>12</h4>
+                            <p>Production Lines</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="manufacturing-stat text-center p-4">
+                            <i class="fas fa-clock fa-3x text-warning mb-3"></i>
+                            <h4>24/7</h4>
+                            <p>Production Capacity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Certifications & Standards</h2>
+                        <p class="lead">Committed to the highest quality standards</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate fa-3x text-primary mb-2"></i>
+                            <h6>ISO 9001</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate fa-3x text-success mb-2"></i>
+                            <h6>CE</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate fa-3x text-info mb-2"></i>
+                            <h6>UL</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate fa-3x text-warning mb-2"></i>
+                            <h6>TUV</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6 text-center mb-4">
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate fa-3x text-danger mb-2"></i>
+                            <h6>IEC</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Leadership -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Leadership Team</h2>
+                        <p class="lead">Experienced professionals driving our success</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card text-center p-4">
+                            <div class="team-avatar mb-3">
+                                <i class="fas fa-user-circle fa-5x text-primary"></i>
+                            </div>
+                            <h5>Dr. Zhang Wei</h5>
+                            <p class="text-muted">Chief Executive Officer</p>
+                            <p>25+ years in renewable energy industry with expertise in solar technology development and manufacturing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card text-center p-4">
+                            <div class="team-avatar mb-3">
+                                <i class="fas fa-user-circle fa-5x text-success"></i>
+                            </div>
+                            <h5>Dr. Li Mei</h5>
+                            <p class="text-muted">Chief Technology Officer</p>
+                            <p>PhD in Electrical Engineering with 20+ years leading R&D teams in power electronics and solar systems.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card text-center p-4">
+                            <div class="team-avatar mb-3">
+                                <i class="fas fa-user-circle fa-5x text-info"></i>
+                            </div>
+                            <h5>Michael Chen</h5>
+                            <p class="text-muted">VP Global Sales</p>
+                            <p>International business expert with extensive experience in global solar market development and partnerships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2>Sustainability Commitment</h2>
+                        <p class="lead">Environmental responsibility is at the core of our operations.</p>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <div class="sustainability-metric">
+                                    <h4 class="text-success">30%</h4>
+                                    <small>Carbon Footprint Reduction</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="sustainability-metric">
+                                    <h4 class="text-success">95%</h4>
+                                    <small>Waste Recycling Rate</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="sustainability-metric">
+                                    <h4 class="text-success">100%</h4>
+                                    <small>Renewable Energy Powered</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="sustainability-metric">
+                                    <h4 class="text-success">Zero</h4>
+                                    <small>Waste to Landfill</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="images/warehouse-finished.jpg"
+                             alt="Finished Solar Inverters Ready for Shipment" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>EuroVolt</h5>
+                    <p>Advanced Solar Electronics Manufacturing</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Shenzhen, China</p>
+                    <p><i class="fas fa-phone me-2"></i>+86 755 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@eurovolt.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-light">About</a></li>
+                        <li><a href="products.html" class="text-light">Products</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 EuroVolt. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <h6><i class="fas fa-robot"></i> Solar Assistant</h6>
+            <button class="btn-close btn-close-white" id="chatClose"></button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+            <div class="input-group">
+                <input type="text" class="form-control" id="chatInput" placeholder="Ask about our products...">
+                <button class="btn btn-primary" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

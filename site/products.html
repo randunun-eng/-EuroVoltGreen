@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - EuroVolt</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/eurovolt-logo.png" alt="Eurovolt" height="40">
+                EuroVolt
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">English</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="zh">中文</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                    </ul>
+                </div>
+
+                <!-- Chat Toggle -->
+                <button class="btn btn-success" id="chatToggle">
+                    <i class="fas fa-comments"></i> Chat
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1>Products</h1>
+                        <p class="lead">Innovative solar equipment for sustainable energy solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs justify-content-center mb-5" id="productTabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#hybrid-inverters">
+                                    <i class="fas fa-bolt me-2"></i>Hybrid Inverters
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#ongrid-inverters">
+                                    <i class="fas fa-plug me-2"></i>On-grid Inverters
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#offgrid-inverters">
+                                    <i class="fas fa-battery-full me-2"></i>Off-grid Inverters
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#mppt-controllers">
+                                    <i class="fas fa-microchip me-2"></i>MPPT Solar Charge Controller
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#pwm-controllers">
+                                    <i class="fas fa-cog me-2"></i>PWM Solar Charge Controller
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Hybrid Inverters -->
+                    <div class="tab-pane fade show active" id="hybrid-inverters">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2>Advanced Hybrid Solar Inverters</h2>
+                                <p class="lead">Precision-engineered inverters with integrated MPPT, battery management, and intelligent grid-tie technology</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- MEGA-6KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image-360">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MEGA-6KW" class="img-fluid">
+                                        <div class="rotation-indicator">
+                                            <i class="fas fa-sync-alt"></i> 360° View
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MEGA-6KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>6KVA/6KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>2 Independent AC Inputs</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>2 MPPT Trackers</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Touchscreen</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Parallel Function</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MEGA-8KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image-360">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MEGA-8KW" class="img-fluid">
+                                        <div class="rotation-indicator">
+                                            <i class="fas fa-sync-alt"></i> 360° View
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MEGA-8KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>8KVA/8KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>2 Independent AC Inputs</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>2 MPPT Trackers</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Touchscreen</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Parallel Function</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MEGA-10KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image-360">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MEGA-10KW" class="img-fluid">
+                                        <div class="rotation-indicator">
+                                            <i class="fas fa-sync-alt"></i> 360° View
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MEGA-10KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>10KVA/10KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>2 Independent AC Inputs</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>2 MPPT Trackers</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Touchscreen</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Parallel Function</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MAGIC-10KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image-360">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MAGIC-10KW" class="img-fluid">
+                                        <div class="rotation-indicator">
+                                            <i class="fas fa-sync-alt"></i> 360° View
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MAGIC-10KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>10KVA/10KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>230VAC/400VAC (3-Phase)</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>3-Phase In/Out</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>3 MPPT Trackers</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Touchscreen</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Parallel Operation</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MAGIC-12KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image-360">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MAGIC-12KW" class="img-fluid">
+                                        <div class="rotation-indicator">
+                                            <i class="fas fa-sync-alt"></i> 360° View
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MAGIC-12KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>12KVA/12KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>230VAC/400VAC (3-Phase)</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>3-Phase In/Out</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>3 MPPT Trackers</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Touchscreen</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Parallel Operation</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- On-grid Inverters -->
+                    <div class="tab-pane fade" id="ongrid-inverters">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2>On-grid Solar Inverters</h2>
+                                <p class="lead">High-efficiency grid-tie inverters with IP65 protection and advanced monitoring</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- MATE-3KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MATE-3KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MATE-3KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>3KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Efficiency</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>IP65 Rating</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Grid-Tie Ready</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MATE-6KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MATE-6KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MATE-6KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>6KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97.3%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Efficiency</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>IP65 Rating</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Dual MPPT</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MATE-10KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MATE-10KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MATE-10KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>10KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Efficiency</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>IP65 Rating</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Triple MPPT</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MATE-15KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="MATE-15KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">MATE-15KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>15KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Efficiency</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>IP65 Rating</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Quad MPPT</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Off-grid Inverters -->
+                    <div class="tab-pane fade" id="offgrid-inverters">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2>Off-grid Solar Inverters</h2>
+                                <p class="lead">Pure sine wave inverters with UPS function and high motor starting capacity</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- META-4KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="META-4KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">META-4KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>4KVA/4KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Motor Capacity</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Pure Sine Wave</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>UPS Function</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- META-6KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="META-6KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">META-6KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>6KVA/6KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Motor Capacity</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Dual MPPT</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>UPS Function</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- META-10KW -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="META-10KW" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">META-10KW</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>10KVA/10KW</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>97%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-450Vdc</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>High Motor Capacity</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Triple MPPT</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>UPS Function</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PV5000-24L -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="PV5000-24L" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">PV5000-24L</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>5KVA</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>208/220/230/240VAC</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Built-in 100A Solar Charger</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Wide MPPT Range 40-500V</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Generator Compatible</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PV9000-24 S5.0 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg"
+                                             alt="PV9000-24 S5.0" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">PV9000-24 S5.0</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Power</small>
+                                                    <p class="mb-1"><strong>5KVA</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>220/230/240VAC</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Built-in 160A Solar Charger</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Wide PV Range 60-500V</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Dual AC Output</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Feed-in to Grid</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MPPT Controllers -->
+                    <div class="tab-pane fade" id="mppt-controllers">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2>MPPT Solar Charge Controllers</h2>
+                                <p class="lead">Maximum Power Point Tracking controllers with advanced algorithms and high efficiency</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- EV-MPPT-30A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg"
+                                             alt="EV-MPPT-30A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-MPPT-30A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>30A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>99.5%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-150Vdc</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Auto Recognition</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Temperature Compensation</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>USB Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>LCD Display</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-MPPT-60A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg"
+                                             alt="EV-MPPT-60A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-MPPT-60A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>60A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>99.5%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-150Vdc</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Auto Recognition</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Temperature Compensation</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>USB Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Bluetooth</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-MPPT-100A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg"
+                                             alt="EV-MPPT-100A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-MPPT-100A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>100A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V/48V</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>99.7%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-150Vdc</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Bluetooth</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>App Control</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Data Logging</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Advanced MPPT Algorithm</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-MPPT-150A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg"
+                                             alt="EV-MPPT-150A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-MPPT-150A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>150A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V/48V</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Efficiency</small>
+                                                    <p class="mb-1"><strong>99.8%</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">MPPT Range</small>
+                                                    <p class="mb-1"><strong>60-200Vdc</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>5 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>WiFi Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Cloud Connectivity</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Advanced Analytics</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Smart Scheduling</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PWM Controllers -->
+                    <div class="tab-pane fade" id="pwm-controllers">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2>PWM Solar Charge Controllers</h2>
+                                <p class="lead">Reliable and cost-effective Pulse Width Modulation controllers for various applications</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- EV-PWM-10A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg"
+                                             alt="EV-PWM-10A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-PWM-10A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>10A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>3 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>LED Display</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Overcharge Protection</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Short Circuit Protection</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Load Control</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-PWM-20A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg"
+                                             alt="EV-PWM-20A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-PWM-20A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>20A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>3 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>LCD Display</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>USB Output</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Timer Control</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Temperature Compensation</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-PWM-30A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg"
+                                             alt="EV-PWM-30A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-PWM-30A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>30A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>3 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>LED Display</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Overcharge Protection</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Timer Control</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Manual Control</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-PWM-50A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg"
+                                             alt="EV-PWM-50A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-PWM-50A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>50A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>3 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>LCD Display</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>USB Output</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Load Control</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Data Logging</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EV-PWM-60A -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg"
+                                             alt="EV-PWM-60A" class="img-fluid">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">EV-PWM-60A</h5>
+                                        <div class="product-specs">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Current</small>
+                                                    <p class="mb-1"><strong>60A</strong></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <small class="text-muted">Voltage</small>
+                                                    <p class="mb-1"><strong>12V/24V/48V</strong></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <small class="text-muted">Warranty</small>
+                                                    <p class="mb-1"><strong>3 years</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-features">
+                                            <h6>Key Features:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check text-success me-2"></i>Large LCD Display</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Dual USB Output</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Remote Monitoring</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>Programmable Settings</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary w-100">
+                                            <i class="fas fa-info-circle me-2"></i>View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Features -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2>Why Choose Eurovolt Products?</h2>
+                        <p class="lead">Quality, innovation, and reliability in every product</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-3 col-6">
+                        <div class="feature-item text-center">
+                            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                            <h5>Quality Assurance</h5>
+                            <p>Rigorous testing and quality control processes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="feature-item text-center">
+                            <i class="fas fa-tools fa-3x text-success mb-3"></i>
+                            <h5>Easy Installation</h5>
+                            <p>User-friendly design for quick and safe installation</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="feature-item text-center">
+                            <i class="fas fa-headset fa-3x text-info mb-3"></i>
+                            <h5>24/7 Support</h5>
+                            <p>Comprehensive technical support and customer service</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="feature-item text-center">
+                            <i class="fas fa-award fa-3x text-warning mb-3"></i>
+                            <h5>5-Year Warranty</h5>
+                            <p>Extended warranty coverage for peace of mind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalTitle">Product Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="productModalBody">
+                        <!-- Product details will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>EuroVolt</h5>
+                    <p>Advanced Solar Electronics Manufacturing</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Shenzhen, China</p>
+                    <p><i class="fas fa-phone me-2"></i>+86 755 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@eurovolt.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-light">About</a></li>
+                        <li><a href="products.html" class="text-light">Products</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 EuroVolt. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <h6><i class="fas fa-robot"></i> Solar Assistant</h6>
+            <button class="btn-close btn-close-white" id="chatClose"></button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+            <div class="input-group">
+                <input type="text" class="form-control" id="chatInput" placeholder="Ask about our products...">
+                <button class="btn btn-primary" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
