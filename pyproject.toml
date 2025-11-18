@@ -17,3 +17,6 @@ dependencies = [
     "wtforms>=3.2.1",
     "openai>=1.102.0",
 ]
+
+[tool.setuptools]
+py-modules = ["app", "forms", "main", "models", "openai_service", "routes", "translations"]
