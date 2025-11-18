@@ -203,38 +203,83 @@ class EurovoltChatbot {
         this.showTypingIndicator();
 
         try {
-            // Send to backend
-            const response = await fetch('/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: message,
-                    language: this.currentLanguage
-                })
-            });
+            // Get response from knowledge base
+            const response = this.getKnowledgeBaseResponse(message);
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            // Simulate thinking delay
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 400));
 
-            const data = await response.json();
-            
             // Remove typing indicator
             this.hideTypingIndicator();
-            
+
             // Add bot response
-            this.addMessage(data.response, 'bot');
-            
+            this.addMessage(response, 'bot');
+
             // Save to history
-            this.saveMessage(message, data.response);
+            this.saveMessage(message, response);
 
         } catch (error) {
             console.error('Chat error:', error);
             this.hideTypingIndicator();
             this.addMessage(this.getTranslation('error'), 'bot');
         }
+    }
+
+    getKnowledgeBaseResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+
+        // Knowledge base responses
+        const knowledgeBase = {
+            en: {
+                'mppt': 'MPPT (Maximum Power Point Tracking) is an advanced technology that optimizes solar panel output by continuously adjusting to find the maximum power point. Our EV-MPPT controllers offer up to 99.8% efficiency and can increase energy harvest by 20-30% compared to PWM controllers. Would you like to know more about our MPPT controller range?',
+                'pwm': 'PWM (Pulse Width Modulation) controllers are reliable, cost-effective charge controllers ideal for smaller solar systems. They work by gradually reducing the charging current as the battery reaches full charge. Our EV-PWM series offers excellent protection features and is perfect for 12V/24V systems up to 60A.',
+                'hybrid': 'Hybrid inverters combine the functionality of both grid-tie and off-grid inverters with battery storage capability. Our MEGA series hybrid inverters feature dual MPPT trackers, touchscreen displays, and can seamlessly switch between solar, battery, and grid power. They\'re ideal for homes wanting energy independence with grid backup. Check out our MEGA-6KW, MEGA-8KW, and MEGA-10KW models!',
+                'inverter': 'We manufacture three types of inverters: Hybrid (MEGA/MAGIC series) for flexible power management, On-Grid (MATE series) for direct grid connection, and Off-Grid (META/PV series) for standalone systems. Each is designed for specific applications. What\'s your use case?',
+                'price|cost|quote': 'For detailed pricing and quotes, please visit our contact page or email us at info@eurovolt.com. Prices vary based on quantity, customization, and shipping location. Our team will provide competitive OEM/ODM pricing for your specific needs.',
+                'warranty': 'Our products come with comprehensive warranties: 5 years for hybrid and MPPT controllers, 3 years for PWM controllers, and 2-5 years for inverters depending on the model. Extended warranties are available. All products include global technical support.',
+                'certification': 'Eurovolt products are certified to international standards including CE, UL, TUV, IEC 62109, and ISO 9001. Our manufacturing facilities maintain ISO 14001 environmental certification and follow strict quality control processes.',
+                'oem|odm': 'Yes! We offer both OEM (Original Equipment Manufacturing) and ODM (Original Design Manufacturing) services. We work with major global solar brands and can customize products to your specifications including branding, packaging, and technical modifications. Contact us to discuss your requirements!',
+                'shipping|delivery': 'We ship worldwide from our Shenzhen facility. Lead times vary: 15-20 days for standard products, 25-35 days for OEM/ODM orders. We work with all major freight forwarders and can arrange door-to-door delivery. Contact us for specific shipping quotes.',
+                'company|about': 'Eurovolt is a leading solar electronics manufacturer based in Shenzhen, China. We specialize in high-efficiency solar inverters and charge controllers with cutting-edge MPPT technology. Our 50,000+ sqm facility houses 15+ production lines and advanced R&D labs. We partner with brands like NEXT, POWMr, SUMRy, EASUN, MUST, and ANERN.',
+                'contact': 'You can reach us at: Email: info@eurovolt.com | Phone: +86 755 1234 5678 | Location: Shenzhen, China. Visit our Contact page for a detailed inquiry form, and our team will respond within 24 hours!',
+                'difference': 'MPPT controllers are 20-30% more efficient and work with higher voltage panels (up to 800V), while PWM is more economical for smaller 12V/24V systems. Hybrid inverters combine solar, battery, and grid capabilities, while on-grid connects only to grid and off-grid works standalone. Choose based on your system size and requirements!',
+                'battery': 'Our inverters and controllers support both Lithium-ion and Lead-acid batteries. MEGA series features intelligent battery management with temperature compensation and multi-stage charging. For optimal performance, we recommend lithium batteries for larger systems and deep-cycle lead-acid for smaller applications.',
+                'installation': 'All our products come with detailed installation manuals and technical support. We recommend professional installation for larger systems (>5kW). Our technical team provides remote support, and we offer installation training for partners. Safety certifications ensure compliance with local electrical codes.',
+                'monitoring': 'Most of our products feature WiFi monitoring capabilities. You can track performance, energy production, battery status, and system alerts through mobile apps (iOS/Android) or web interfaces. Cloud connectivity enables remote diagnostics and firmware updates.'
+            },
+            zh: {
+                'mppt': 'MPPT（最大功率点跟踪）是一种先进技术，通过持续调整找到最大功率点来优化太阳能板输出。我们的EV-MPPT控制器效率高达99.8%，与PWM控制器相比可提高20-30%的能量收集。您想了解更多关于我们的MPPT控制器系列吗？',
+                'pwm': 'PWM（脉宽调制）控制器是可靠且经济实惠的充电控制器，非常适合小型太阳能系统。它们通过在电池达到满电时逐渐减少充电电流来工作。我们的EV-PWM系列提供出色的保护功能，非常适合12V/24V系统，最高可达60A。',
+                'hybrid': '混合逆变器结合了并网和离网逆变器的功能以及电池存储能力。我们的MEGA系列混合逆变器具有双MPPT跟踪器、触摸屏显示，可以在太阳能、电池和电网电源之间无缝切换。它们非常适合希望能源独立并具有电网备份的家庭。查看我们的MEGA-6KW、MEGA-8KW和MEGA-10KW型号！',
+                'inverter': '我们生产三种类型的逆变器：混合型（MEGA/MAGIC系列）用于灵活的电源管理，并网型（MATE系列）用于直接连接电网，离网型（META/PV系列）用于独立系统。每种都是为特定应用设计的。您的使用场景是什么？',
+                'price|cost|quote': '有关详细定价和报价，请访问我们的联系页面或发送电子邮件至info@eurovolt.com。价格因数量、定制和运输地点而异。我们的团队将为您的特定需求提供有竞争力的OEM/ODM定价。',
+                'warranty': '我们的产品提供全面保修：混合型和MPPT控制器5年，PWM控制器3年，逆变器2-5年（取决于型号）。可提供延长保修。所有产品均包含全球技术支持。',
+                'oem|odm': '是的！我们提供OEM（原始设备制造）和ODM（原始设计制造）服务。我们与全球主要太阳能品牌合作，可以根据您的规格定制产品，包括品牌、包装和技术修改。联系我们讨论您的要求！',
+                'company|about': 'Eurovolt是一家位于中国深圳的领先太阳能电子制造商。我们专注于高效太阳能逆变器和具有尖端MPPT技术的充电控制器。我们的50,000+平方米设施拥有15+条生产线和先进的研发实验室。',
+                'contact': '您可以通过以下方式联系我们：电子邮件：info@eurovolt.com | 电话：+86 755 1234 5678 | 地址：中国深圳。访问我们的联系页面获取详细的咨询表格，我们的团队将在24小时内回复！'
+            }
+        };
+
+        const responses = knowledgeBase[this.currentLanguage] || knowledgeBase.en;
+
+        // Find matching response
+        for (const [keywords, response] of Object.entries(responses)) {
+            const keywordList = keywords.split('|');
+            if (keywordList.some(keyword => message.includes(keyword))) {
+                return response;
+            }
+        }
+
+        // Default response
+        const defaults = {
+            en: "Thank you for your question! I'm here to help with information about our solar inverters, MPPT controllers, PWM controllers, and OEM/ODM services. For specific technical questions or quotes, please visit our Contact page or email info@eurovolt.com. How can I assist you with solar technology today?",
+            zh: "感谢您的提问！我在这里帮助您了解我们的太阳能逆变器、MPPT控制器、PWM控制器和OEM/ODM服务。如有具体技术问题或报价需求，请访问我们的联系页面或发送电子邮件至info@eurovolt.com。今天我如何帮助您了解太阳能技术？",
+            es: "¡Gracias por su pregunta! Estoy aquí para ayudarle con información sobre nuestros inversores solares, controladores MPPT, controladores PWM y servicios OEM/ODM. Para preguntas técnicas específicas o cotizaciones, visite nuestra página de Contacto o envíe un correo a info@eurovolt.com.",
+            de: "Vielen Dank für Ihre Frage! Ich bin hier, um Ihnen bei Informationen zu unseren Solarwechselrichtern, MPPT-Controllern, PWM-Controllern und OEM/ODM-Services zu helfen. Für spezifische technische Fragen oder Angebote besuchen Sie bitte unsere Kontaktseite oder senden Sie eine E-Mail an info@eurovolt.com.",
+            fr: "Merci pour votre question ! Je suis là pour vous aider avec des informations sur nos onduleurs solaires, contrôleurs MPPT, contrôleurs PWM et services OEM/ODM. Pour des questions techniques spécifiques ou des devis, visitez notre page Contact ou envoyez un e-mail à info@eurovolt.com."
+        };
+
+        return defaults[this.currentLanguage] || defaults.en;
     }
 
     addMessage(text, sender) {

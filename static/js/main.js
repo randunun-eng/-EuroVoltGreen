@@ -294,17 +294,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Language switcher enhancement
-    const languageDropdown = document.querySelector('.dropdown-menu');
-    if (languageDropdown) {
-        languageDropdown.addEventListener('click', function(e) {
-            if (e.target.classList.contains('dropdown-item')) {
-                const currentUrl = new URL(window.location);
-                const langCode = e.target.getAttribute('href').split('lang=')[1];
-                currentUrl.searchParams.set('lang', langCode);
-                window.location.href = currentUrl.toString();
-            }
+    // Initialize language on page load
+    updatePageLanguage();
+
+    // Update language display
+    function updateLanguageDisplay() {
+        const currentLang = getCurrentLanguage();
+        const langNames = {
+            'en': 'English',
+            'zh': '中文',
+            'es': 'Español',
+            'de': 'Deutsch',
+            'fr': 'Français'
+        };
+        const langSpan = document.getElementById('currentLang');
+        if (langSpan) {
+            langSpan.textContent = langNames[currentLang] || 'English';
+        }
+    }
+
+    // Update all translatable elements
+    function updatePageLanguage() {
+        const currentLang = getCurrentLanguage();
+        updateLanguageDisplay();
+
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            element.textContent = getTranslation(key, currentLang);
         });
+
+        // Update specific elements
+        const navBrand = document.getElementById('nav-brand');
+        if (navBrand) navBrand.textContent = getTranslation('company_name', currentLang);
+
+        const footerCompany = document.getElementById('footer-company');
+        if (footerCompany) footerCompany.textContent = getTranslation('company_name', currentLang);
+
+        const footerTagline = document.getElementById('footer-tagline');
+        if (footerTagline) footerTagline.textContent = getTranslation('tagline', currentLang);
+
+        const footerCopyright = document.getElementById('footer-copyright');
+        if (footerCopyright) footerCopyright.textContent = getTranslation('company_name', currentLang);
+
+        // Update page title
+        const titleElement = document.querySelector('title');
+        if (titleElement && titleElement.textContent.includes('Eurovolt')) {
+            titleElement.textContent = `${getTranslation('company_name', currentLang)} - ${getTranslation('tagline', currentLang)}`;
+        }
+
+        // Update chat placeholder
+        const chatInput = document.getElementById('chatInput');
+        if (chatInput) {
+            chatInput.placeholder = getTranslation('chat_placeholder', currentLang);
+        }
     }
 
     // Timeline animation
@@ -334,8 +377,105 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Render products if on products page
+    if (typeof productData !== 'undefined') {
+        renderProducts();
+    }
+
+    // Render roadmap if on roadmap page
+    if (typeof roadmapData !== 'undefined' && document.getElementById('roadmapTimeline')) {
+        renderRoadmap();
+    }
+
     console.log('Eurovolt website initialized successfully');
 });
+
+// Render products dynamically
+function renderProducts() {
+    if (typeof productData === 'undefined') return;
+
+    const categories = [
+        { key: 'hybrid_inverters', containerId: 'hybridInvertersContainer' },
+        { key: 'ongrid_inverters', containerId: 'ongridInvertersContainer' },
+        { key: 'offgrid_inverters', containerId: 'offgridInvertersContainer' },
+        { key: 'mppt_controllers', containerId: 'mpptControllersContainer' },
+        { key: 'pwm_controllers', containerId: 'pwmControllersContainer' }
+    ];
+
+    categories.forEach(category => {
+        const container = document.getElementById(category.containerId);
+        if (container && productData[category.key]) {
+            container.innerHTML = productData[category.key].map(product => createProductCard(product)).join('');
+        }
+    });
+}
+
+// Create product card HTML
+function createProductCard(product) {
+    let html = '<div class="col-md-6 col-lg-4 mb-4">';
+    html += '<div class="card h-100 product-card">';
+    html += '<div class="card-body">';
+    html += `<h5 class="card-title">${product.name}</h5>`;
+
+    if (product.power) html += `<p class="mb-2"><strong>Power:</strong> ${product.power}</p>`;
+    if (product.current) html += `<p class="mb-2"><strong>Current:</strong> ${product.current}</p>`;
+    if (product.voltage) html += `<p class="mb-2"><strong>Voltage:</strong> ${product.voltage}</p>`;
+    if (product.efficiency) html += `<p class="mb-2"><strong>Efficiency:</strong> ${product.efficiency}</p>`;
+    if (product.mppt_range) html += `<p class="mb-2"><strong>MPPT Range:</strong> ${product.mppt_range}</p>`;
+
+    if (product.features && product.features.length > 0) {
+        html += '<div class="mt-3"><strong>Features:</strong><ul class="list-unstyled mt-2">';
+        product.features.slice(0, 3).forEach(feature => {
+            html += `<li><i class="fas fa-check text-success me-2"></i>${feature}</li>`;
+        });
+        html += '</ul></div>';
+    }
+
+    if (product.warranty) html += `<p class="mb-2"><strong>Warranty:</strong> ${product.warranty}</p>`;
+    if (product.price) html += `<p class="text-primary fw-bold fs-5">${product.price}</p>`;
+
+    html += '<div class="mt-3">';
+    html += '<a href="contact.html" class="btn btn-primary btn-sm">Request Quote</a>';
+    html += '</div>';
+
+    html += '</div></div></div>';
+    return html;
+}
+
+// Render roadmap timeline
+function renderRoadmap() {
+    const timeline = document.getElementById('roadmapTimeline');
+    if (!timeline || typeof roadmapData === 'undefined') return;
+
+    timeline.innerHTML = roadmapData.map((item, index) => {
+        const isLeft = index % 2 === 0;
+        const isFuture = item.goals !== undefined;
+
+        let html = `<div class="timeline-item ${isLeft ? 'left' : 'right'}">`;
+        html += '<div class="timeline-content">';
+        html += `<div class="timeline-year">${item.year}</div>`;
+        html += `<h3>${item.title}</h3>`;
+
+        if (item.achievements) {
+            html += '<ul class="achievement-list">';
+            item.achievements.forEach(achievement => {
+                html += `<li><i class="fas fa-check-circle text-success me-2"></i>${achievement}</li>`;
+            });
+            html += '</ul>';
+        }
+
+        if (item.goals) {
+            html += '<ul class="achievement-list">';
+            item.goals.forEach(goal => {
+                html += `<li><i class="fas fa-star text-warning me-2"></i>${goal}</li>`;
+            });
+            html += '</ul>';
+        }
+
+        html += '</div></div>';
+        return html;
+    }).join('');
+}
 
 // Utility functions
 function debounce(func, wait, immediate) {

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="products_title">Products - Eurovolt Solar Technology</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/eurovolt-logo.png" alt="Eurovolt" height="40" onerror="this.style.display='none'">
+                <span id="nav-brand">Eurovolt</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html" data-i18n="nav_products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmap.html" data-i18n="nav_roadmap">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">English</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('zh')">中文</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('es')">Español</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('de')">Deutsch</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
+                    </ul>
+                </div>
+
+                <!-- Chat Toggle -->
+                <button class="btn btn-success" id="chatToggle">
+                    <i class="fas fa-comments"></i> Chat
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header bg-primary text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4" data-i18n="products_header">Our Products</h1>
+                        <p class="lead" data-i18n="products_subheader">Advanced solar inverters and charge controllers for every application</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories Navigation -->
+        <section class="py-4 bg-light sticky-top" style="top: 56px; z-index: 1020;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="nav nav-pills nav-fill">
+                            <a class="nav-link active" href="#hybrid-inverters" data-i18n="cat_hybrid">Hybrid Inverters</a>
+                            <a class="nav-link" href="#ongrid-inverters" data-i18n="cat_ongrid">On-Grid Inverters</a>
+                            <a class="nav-link" href="#offgrid-inverters" data-i18n="cat_offgrid">Off-Grid Inverters</a>
+                            <a class="nav-link" href="#mppt-controllers" data-i18n="cat_mppt">MPPT Controllers</a>
+                            <a class="nav-link" href="#pwm-controllers" data-i18n="cat_pwm">PWM Controllers</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hybrid Inverters -->
+        <section id="hybrid-inverters" class="py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-i18n="hybrid_title">Hybrid Solar Inverters</h2>
+                        <p class="lead text-muted" data-i18n="hybrid_desc">Advanced hybrid inverters with built-in MPPT charge controllers, battery management, and grid-tie capability. Perfect for residential and commercial solar installations.</p>
+                    </div>
+                </div>
+                <div class="row g-4" id="hybrid-products"></div>
+            </div>
+        </section>
+
+        <!-- On-Grid Inverters -->
+        <section id="ongrid-inverters" class="py-5 bg-light">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-i18n="ongrid_title">On-Grid Solar Inverters</h2>
+                        <p class="lead text-muted" data-i18n="ongrid_desc">High-efficiency grid-tie inverters designed for maximum solar energy conversion. IP65 rated for outdoor installation with advanced monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="row g-4" id="ongrid-products"></div>
+            </div>
+        </section>
+
+        <!-- Off-Grid Inverters -->
+        <section id="offgrid-inverters" class="py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-i18n="offgrid_title">Off-Grid Solar Inverters</h2>
+                        <p class="lead text-muted" data-i18n="offgrid_desc">Pure sine wave inverters with high motor capacity and UPS function. Ideal for remote locations and backup power systems.</p>
+                    </div>
+                </div>
+                <div class="row g-4" id="offgrid-products"></div>
+            </div>
+        </section>
+
+        <!-- MPPT Controllers -->
+        <section id="mppt-controllers" class="py-5 bg-light">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-i18n="mppt_title">MPPT Charge Controllers</h2>
+                        <p class="lead text-muted" data-i18n="mppt_desc">Maximum Power Point Tracking controllers with up to 99.8% efficiency. Advanced algorithms ensure optimal power harvesting from your solar panels.</p>
+                    </div>
+                </div>
+                <div class="row g-4" id="mppt-products"></div>
+            </div>
+        </section>
+
+        <!-- PWM Controllers -->
+        <section id="pwm-controllers" class="py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-3" data-i18n="pwm_title">PWM Charge Controllers</h2>
+                        <p class="lead text-muted" data-i18n="pwm_desc">Reliable Pulse Width Modulation controllers with intelligent battery management. Cost-effective solution for smaller solar systems.</p>
+                    </div>
+                </div>
+                <div class="row g-4" id="pwm-products"></div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 data-i18n="cta_title">Need Help Choosing?</h2>
+                        <p class="lead" data-i18n="cta_subtitle">Our technical team is here to help you select the perfect equipment for your solar project</p>
+                        <a href="contact.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-envelope"></i> <span data-i18n="cta_button">Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 id="footer-company">Eurovolt</h5>
+                    <p id="footer-tagline">Leading Solar Technology Manufacturing</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Shenzhen, China</p>
+                    <p><i class="fas fa-phone me-2"></i>+86 755 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@eurovolt.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-light" data-i18n="nav_about">About</a></li>
+                        <li><a href="products.html" class="text-light" data-i18n="nav_products">Products</a></li>
+                        <li><a href="contact.html" class="text-light" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 <span id="footer-copyright">Eurovolt</span>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <h6><i class="fas fa-robot"></i> Solar Assistant</h6>
+            <button class="btn-close btn-close-white" id="chatClose"></button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+            <div class="input-group">
+                <input type="text" class="form-control" id="chatInput" placeholder="Ask about solar technology...">
+                <button class="btn btn-primary" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="static/js/config.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/chatbot.js"></script>
+
+    <!-- Products Page Specific JS -->
+    <script>
+        // Render products from data.js
+        function renderProducts() {
+            // Render Hybrid Inverters
+            const hybridContainer = document.getElementById('hybrid-products');
+            productData.hybrid_inverters.forEach(product => {
+                hybridContainer.innerHTML += createProductCard(product, 'hybrid');
+            });
+
+            // Render On-Grid Inverters
+            const ongridContainer = document.getElementById('ongrid-products');
+            productData.ongrid_inverters.forEach(product => {
+                ongridContainer.innerHTML += createProductCard(product, 'ongrid');
+            });
+
+            // Render Off-Grid Inverters
+            const offgridContainer = document.getElementById('offgrid-products');
+            productData.offgrid_inverters.forEach(product => {
+                offgridContainer.innerHTML += createProductCard(product, 'offgrid');
+            });
+
+            // Render MPPT Controllers
+            const mpptContainer = document.getElementById('mppt-products');
+            productData.mppt_controllers.forEach(product => {
+                mpptContainer.innerHTML += createProductCard(product, 'mppt');
+            });
+
+            // Render PWM Controllers
+            const pwmContainer = document.getElementById('pwm-products');
+            productData.pwm_controllers.forEach(product => {
+                pwmContainer.innerHTML += createProductCard(product, 'pwm');
+            });
+        }
+
+        function createProductCard(product, category) {
+            const features = product.features ? product.features.map(f => `<li><i class="fas fa-check text-success me-2"></i>${f}</li>`).join('') : '';
+            const goals = product.goals ? product.goals.map(g => `<li><i class="fas fa-star text-warning me-2"></i>${g}</li>`).join('') : '';
+            const certifications = product.certifications ? product.certifications.map(c => `<span class="badge bg-info me-1">${c}</span>`).join('') : '';
+
+            return `
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">${product.name}</h5>
+                            ${product.power ? `<h6 class="text-muted mb-3">${product.power}</h6>` : ''}
+                            ${product.current ? `<h6 class="text-muted mb-3">${product.current} Controller</h6>` : ''}
+
+                            <div class="product-specs mb-3">
+                                ${product.voltage ? `<p class="mb-1"><strong>Voltage:</strong> ${product.voltage}</p>` : ''}
+                                ${product.efficiency ? `<p class="mb-1"><strong>Efficiency:</strong> ${product.efficiency}</p>` : ''}
+                                ${product.mppt_range ? `<p class="mb-1"><strong>MPPT Range:</strong> ${product.mppt_range}</p>` : ''}
+                                ${product.warranty ? `<p class="mb-1"><strong>Warranty:</strong> ${product.warranty}</p>` : ''}
+                                ${product.weight ? `<p class="mb-1"><strong>Weight:</strong> ${product.weight}</p>` : ''}
+                                ${product.dimensions ? `<p class="mb-1"><strong>Dimensions:</strong> ${product.dimensions}</p>` : ''}
+                                ${product.price ? `<p class="mb-1"><strong>Price:</strong> <span class="text-success fs-5">${product.price}</span></p>` : ''}
+                            </div>
+
+                            ${certifications ? `<div class="mb-3">${certifications}</div>` : ''}
+
+                            ${features ? `
+                                <div class="features-list">
+                                    <h6 class="fw-bold">Key Features:</h6>
+                                    <ul class="list-unstyled">
+                                        ${features}
+                                    </ul>
+                                </div>
+                            ` : ''}
+
+                            ${goals ? `
+                                <div class="features-list">
+                                    <h6 class="fw-bold">Goals:</h6>
+                                    <ul class="list-unstyled">
+                                        ${goals}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="card-footer bg-white border-top-0">
+                            <a href="contact.html" class="btn btn-primary w-100">
+                                <i class="fas fa-envelope me-2"></i>Request Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Smooth scroll for category navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+
+            // Handle category navigation
+            const navLinks = document.querySelectorAll('.nav-pills .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Update active state
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Smooth scroll to section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    const navbarHeight = 120; // Fixed navbar + sticky nav
+
+                    window.scrollTo({
+                        top: targetSection.offsetTop - navbarHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Update active nav on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPos = window.scrollY + 200;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
