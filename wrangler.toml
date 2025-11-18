@@ -1,6 +1,0 @@
-name = "eurovolt-green"
-compatibility_date = "2025-11-18"
-pages_build_output_dir = "."
-
-# Static site configuration - no build command needed
-# All HTML, CSS, and JS files are ready to serve
