@@ -8,19 +8,37 @@ This is a **static HTML website** with no build process required.
 
 When setting up your Cloudflare Pages project, use these exact settings:
 
-### Build Settings
+### ⚠️ CRITICAL: Use Configuration Option 1 or 2
+
+**Option 1: No Build (Recommended)**
 ```
 Framework preset: None
-Build command: (leave empty)
+Build command: (leave completely empty - do not type anything)
 Build output directory: /
 Root directory (advanced): (leave empty)
 ```
 
-### Alternative Build Command
-If Cloudflare Pages requires a build command, use:
+**Option 2: Simple Build Script**
 ```
-echo "No build required - static site"
+Framework preset: None
+Build command: ./build.sh
+Build output directory: /
+Root directory (advanced): (leave empty)
 ```
+
+**Option 3: Echo Command (Fallback)**
+```
+Framework preset: None
+Build command: echo "Static site ready"
+Build output directory: /
+Root directory (advanced): (leave empty)
+```
+
+### Common Mistakes to Avoid
+❌ DO NOT set build output directory to `.` (use `/` instead)
+❌ DO NOT select any framework preset
+❌ DO NOT set a root directory
+❌ DO NOT add environment variables (none needed)
 
 ## Step-by-Step Deployment
 
@@ -56,26 +74,79 @@ echo "No build required - static site"
 
 ## Troubleshooting
 
-### Deployment Fails
+### Deployment Fails - "No build output found"
 
-**Issue:** Build fails with "No build output found"
-**Solution:** Make sure build output directory is set to `/` (root)
+This is the most common error. Fix it by:
 
-**Issue:** Build command errors
-**Solution:** Leave build command empty or use `echo "No build required"`
+1. **Go to Cloudflare Pages → Your Project → Settings → Builds & deployments**
+2. **Click "Edit configuration"**
+3. **Set Build output directory to exactly: `/`** (forward slash only)
+4. **Make sure Build command is empty OR `./build.sh`**
+5. **Click "Save"**
+6. **Go to Deployments tab → Click "Retry deployment"**
 
-**Issue:** 404 errors after deployment
-**Solution:** Verify that `index.html` exists in the root directory
+### Deployment Fails - Build command errors
 
-### Static Assets Not Loading
+**Error:** "Command not found" or "Build failed"
 
-**Issue:** CSS/JS files return 404
-**Solution:** Verify the `static/` directory structure is intact
+**Solutions:**
+- Clear the build command completely (leave it blank)
+- OR use: `./build.sh`
+- OR use: `exit 0`
 
-### Headers Not Applied
+### Deployment Succeeds but Shows 404
 
-**Issue:** Security headers not showing
-**Solution:** Check `_headers` file syntax matches Cloudflare Pages format
+**Issue:** Site deploys but shows 404 on all pages
+
+**Solutions:**
+1. Verify build output directory is `/` not `.`
+2. Check that `index.html` exists in repository root
+3. Verify all files are committed to Git:
+   ```bash
+   git status
+   git push origin main
+   ```
+4. Force a new deployment in Cloudflare Pages
+
+### Static Assets Not Loading (CSS/JS 404 errors)
+
+**Issue:** Homepage loads but no styling, broken images
+
+**Solutions:**
+1. Check browser console for 404 errors
+2. Verify `static/` directory is in repository:
+   ```bash
+   git ls-files | grep static
+   ```
+3. If missing, add and commit:
+   ```bash
+   git add static/
+   git commit -m "Add static assets"
+   git push origin main
+   ```
+
+### Build Keeps Failing
+
+**Nuclear option - Complete reset:**
+
+1. **Delete the Cloudflare Pages project**
+2. **Create a new project**
+3. **Use these EXACT settings:**
+   - Framework: None
+   - Build command: (empty)
+   - Build output: `/`
+4. **Deploy**
+
+### Still Not Working?
+
+**Check the build log in Cloudflare Pages:**
+1. Go to Deployments tab
+2. Click on the failed deployment
+3. Read the error message
+4. Common fixes:
+   - If it says "directory not found": Set output to `/`
+   - If it says "command failed": Clear build command
+   - If it says "no index.html": Verify file is committed
 
 ## Verifying Deployment
 

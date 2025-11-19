@@ -52,10 +52,12 @@ The site is configured for automatic deployment on Cloudflare Pages via GitHub i
 
 **Build Configuration:**
 - Framework preset: **None**
-- Build command: **(leave empty or use: `echo 'No build required'`)**
-- Build output directory: **`/` (root directory)**
+- Build command: **(leave empty OR use: `./build.sh`)**
+- Build output directory: **`/` (root directory)** ⚠️ CRITICAL: Must be `/` not `.`
 - Root directory: **(leave empty)**
 - Environment variables: None required
+
+**⚠️ IMPORTANT:** If deployment fails, see `DEPLOYMENT.md` for detailed troubleshooting
 
 **Deployment Steps:**
 1. Connect GitHub repository: `randunun-eng/-EuroVoltGreen`
