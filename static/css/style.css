@@ -1109,18 +1109,25 @@ section.py-5.bg-light p.manufacturing-subtitle {
     filter: invert(1) !important;
 }
 
-/* R&D Excellence section - all text dark */
-#rd-excellence h2,
+/* R&D Excellence section - dark background with white title */
+#rd-excellence {
+    background: linear-gradient(135deg, var(--eurovolt-black) 0%, var(--eurovolt-dark-gray) 100%);
+}
+
+#rd-excellence .col-12.text-center h2 {
+    color: #ffffff !important;
+}
+
+#rd-excellence .col-12.text-center .lead {
+    color: #ffffff !important;
+}
+
+/* R&D Excellence content area - ensure readability */
 #rd-excellence h3,
-#rd-excellence h4,
 #rd-excellence p,
 #rd-excellence li,
 #rd-excellence small {
-    color: #000000 !important;
-}
-
-#rd-excellence .lead {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 /* Innovation text - make white */
