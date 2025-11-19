@@ -415,23 +415,23 @@ function createProductCard(product) {
     let html = '<div class="col-md-6 col-lg-4 mb-4">';
     html += '<div class="card h-100 product-card">';
     html += '<div class="card-body">';
-    html += `<h5 class="card-title">${product.name}</h5>`;
+    html += `<h5 class="card-title text-dark">${product.name}</h5>`;
 
-    if (product.power) html += `<p class="mb-2"><strong>Power:</strong> ${product.power}</p>`;
-    if (product.current) html += `<p class="mb-2"><strong>Current:</strong> ${product.current}</p>`;
-    if (product.voltage) html += `<p class="mb-2"><strong>Voltage:</strong> ${product.voltage}</p>`;
-    if (product.efficiency) html += `<p class="mb-2"><strong>Efficiency:</strong> ${product.efficiency}</p>`;
-    if (product.mppt_range) html += `<p class="mb-2"><strong>MPPT Range:</strong> ${product.mppt_range}</p>`;
+    if (product.power) html += `<p class="mb-2 text-dark"><strong>Power:</strong> ${product.power}</p>`;
+    if (product.current) html += `<p class="mb-2 text-dark"><strong>Current:</strong> ${product.current}</p>`;
+    if (product.voltage) html += `<p class="mb-2 text-dark"><strong>Voltage:</strong> ${product.voltage}</p>`;
+    if (product.efficiency) html += `<p class="mb-2 text-dark"><strong>Efficiency:</strong> ${product.efficiency}</p>`;
+    if (product.mppt_range) html += `<p class="mb-2 text-dark"><strong>MPPT Range:</strong> ${product.mppt_range}</p>`;
 
     if (product.features && product.features.length > 0) {
-        html += '<div class="mt-3"><strong>Features:</strong><ul class="list-unstyled mt-2">';
+        html += '<div class="mt-3 text-dark"><strong>Features:</strong><ul class="list-unstyled mt-2">';
         product.features.slice(0, 3).forEach(feature => {
-            html += `<li><i class="fas fa-check text-success me-2"></i>${feature}</li>`;
+            html += `<li class="text-dark"><i class="fas fa-check text-success me-2"></i>${feature}</li>`;
         });
         html += '</ul></div>';
     }
 
-    if (product.warranty) html += `<p class="mb-2"><strong>Warranty:</strong> ${product.warranty}</p>`;
+    if (product.warranty) html += `<p class="mb-2 text-dark"><strong>Warranty:</strong> ${product.warranty}</p>`;
     if (product.price) html += `<p class="text-primary fw-bold fs-5">${product.price}</p>`;
 
     html += '<div class="mt-3">';
