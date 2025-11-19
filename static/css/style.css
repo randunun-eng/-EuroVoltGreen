@@ -1109,9 +1109,18 @@ section.py-5.bg-light p.manufacturing-subtitle {
     filter: invert(1) !important;
 }
 
-/* R&D Excellence heading - change from white to black */
-#rd-excellence .col-12.text-center h2 {
-    color: #000000;
+/* R&D Excellence section - all text dark */
+#rd-excellence h2,
+#rd-excellence h3,
+#rd-excellence h4,
+#rd-excellence p,
+#rd-excellence li,
+#rd-excellence small {
+    color: #000000 !important;
+}
+
+#rd-excellence .lead {
+    color: #ffffff !important;
 }
 
 /* Innovation text - make white */
