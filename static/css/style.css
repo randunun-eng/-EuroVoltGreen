@@ -1158,6 +1158,18 @@ section.py-5.bg-light p.lead.innovation-text {
     border-color: var(--eurovolt-green);
 }
 
+/* Technology Evolution Image */
+.tech-evolution-img {
+    transition: all 0.4s ease;
+    border: 3px solid var(--border-color);
+}
+
+.tech-evolution-img:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.3) !important;
+    border-color: var(--eurovolt-green);
+}
+
 /* Product Detail Modal Styles */
 #productModal .modal-content {
     background: white;
