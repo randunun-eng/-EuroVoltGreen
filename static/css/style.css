@@ -1146,6 +1146,18 @@ section.py-5.bg-light p.lead.innovation-text {
     border-radius: 20px;
 }
 
+/* Manufacturing Facility Image */
+.manufacturing-facility-img {
+    transition: all 0.4s ease;
+    border: 3px solid var(--border-color);
+}
+
+.manufacturing-facility-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.3) !important;
+    border-color: var(--eurovolt-green);
+}
+
 /* Product Detail Modal Styles */
 #productModal .modal-content {
     background: white;
