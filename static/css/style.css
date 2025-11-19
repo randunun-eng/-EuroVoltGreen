@@ -776,6 +776,11 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
+.manufacturing-stat h4,
+.manufacturing-stat p {
+    color: #000000 !important;
+}
+
 /* Certification Badges */
 .certification-badge {
     transition: all 0.3s ease;
