@@ -203,25 +203,42 @@ class EurovoltChatbot {
         this.showTypingIndicator();
 
         try {
-            // Get response from knowledge base
-            const response = this.getKnowledgeBaseResponse(message);
+            // Call Cloudflare AI endpoint
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: message,
+                    language: this.currentLanguage
+                })
+            });
 
-            // Simulate thinking delay
-            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 400));
+            if (!response.ok) {
+                throw new Error('AI service unavailable');
+            }
+
+            const data = await response.json();
 
             // Remove typing indicator
             this.hideTypingIndicator();
 
             // Add bot response
-            this.addMessage(response, 'bot');
+            const reply = data.reply || this.getKnowledgeBaseResponse(message);
+            this.addMessage(reply, 'bot');
 
             // Save to history
-            this.saveMessage(message, response);
+            this.saveMessage(message, reply);
 
         } catch (error) {
             console.error('Chat error:', error);
             this.hideTypingIndicator();
-            this.addMessage(this.getTranslation('error'), 'bot');
+
+            // Fallback to knowledge base if AI fails
+            const fallbackResponse = this.getKnowledgeBaseResponse(message);
+            this.addMessage(fallbackResponse, 'bot');
+            this.saveMessage(message, fallbackResponse);
         }
     }
 
