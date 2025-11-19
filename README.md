@@ -28,6 +28,9 @@ Professional static website for Eurovolt Solar Manufacturing, a leading manufact
 ├── products.html           # Product catalog
 ├── roadmap.html            # Innovation timeline
 ├── contact.html            # Contact form
+├── _headers                # Cloudflare Pages headers configuration
+├── _redirects              # Cloudflare Pages redirects
+├── package.json            # Project metadata
 ├── static/
 │   ├── css/
 │   │   └── style.css       # Custom styles
@@ -38,7 +41,6 @@ Professional static website for Eurovolt Solar Manufacturing, a leading manufact
 │   │   ├── chatbot.js      # AI chatbot functionality
 │   │   └── 360viewer.js    # Product 360° viewer
 │   └── images/             # Image assets
-├── wrangler.toml           # Cloudflare Pages configuration
 └── README.md               # This file
 ```
 
@@ -46,12 +48,22 @@ Professional static website for Eurovolt Solar Manufacturing, a leading manufact
 
 ### Cloudflare Pages
 
-The site is configured for automatic deployment on Cloudflare Pages:
+The site is configured for automatic deployment on Cloudflare Pages via GitHub integration.
 
-1. Connected to GitHub repository: `randunun-eng/-EuroVoltGreen`
-2. Automatic builds on push to `main` branch
-3. No build command required (static files)
-4. Serves from root directory
+**Build Configuration:**
+- Framework preset: **None**
+- Build command: **(leave empty or use: `echo 'No build required'`)**
+- Build output directory: **`/` (root directory)**
+- Root directory: **(leave empty)**
+- Environment variables: None required
+
+**Deployment Steps:**
+1. Connect GitHub repository: `randunun-eng/-EuroVoltGreen`
+2. Set branch to deploy: `main`
+3. Configure build settings as specified above
+4. Save and deploy
+
+The site includes `_headers` and `_redirects` files for Cloudflare Pages configuration.
 
 ### Local Development
 
