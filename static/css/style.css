@@ -84,6 +84,30 @@ body {
     background: transparent;
 }
 
+.hero-logo {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(76, 175, 80, 0.3)) !important;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 300px;
+        margin-top: 2rem;
+    }
+}
+
 .hero-title {
     font-size: 4rem;
     font-weight: 700;
