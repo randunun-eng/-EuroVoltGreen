@@ -779,6 +779,12 @@ body {
     border-color: var(--eurovolt-green);
 }
 
+.timezone-card h5,
+.timezone-card p,
+.timezone-card strong {
+    color: #000000 !important;
+}
+
 /* Map Container */
 .map-container {
     border-radius: 15px;
