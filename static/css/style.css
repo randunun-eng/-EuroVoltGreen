@@ -187,11 +187,25 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     height: 100%;
+    color: #000000;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.product-card h5,
+.product-card h6,
+.product-card p,
+.product-card strong,
+.product-card li,
+.product-card .card-title {
+    color: #000000 !important;
+}
+
+.product-card .text-muted {
+    color: #6c757d !important;
 }
 
 .product-image {
