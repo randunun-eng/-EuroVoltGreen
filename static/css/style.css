@@ -94,20 +94,11 @@ body {
     width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(76, 175, 80, 0.3)) !important;
-    animation: logoFloat 3s ease-in-out infinite;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-}
-
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {
