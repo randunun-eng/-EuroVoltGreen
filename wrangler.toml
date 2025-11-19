@@ -1,0 +1,10 @@
+name = "eurovolt-green"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "/"
+
+# Workers AI Binding
+[ai]
+binding = "AI"
+
+# For Cloudflare Pages
+# This configuration enables Workers AI for your Pages Functions
