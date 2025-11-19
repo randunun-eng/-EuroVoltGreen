@@ -1116,3 +1116,53 @@ section.py-5.bg-light p.lead.innovation-text {
 .border-radius-xl {
     border-radius: 20px;
 }
+
+/* Product Detail Modal Styles */
+#productModal .modal-content {
+    background: white;
+    color: #000000;
+}
+
+#productModal .nav-tabs .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+#productModal .nav-tabs .nav-link.active {
+    color: var(--eurovolt-green);
+    border-bottom-color: var(--eurovolt-green);
+}
+
+#productModal .tab-content {
+    min-height: 400px;
+    color: #000000;
+}
+
+#productModal table th,
+#productModal table td {
+    color: #000000 !important;
+}
+
+#productModal .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+#productModal .card {
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+#productModal .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#productModal img.img-fluid {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#productModal img.img-fluid:hover {
+    transform: scale(1.05);
+}

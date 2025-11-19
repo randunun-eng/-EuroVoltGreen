@@ -11,7 +11,35 @@ const productData = {
             warranty: '5 years',
             price: '$377',
             dimensions: '521x470x236mm',
-            weight: '30kg'
+            weight: '30kg',
+            images: [
+                'https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg',
+                'https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg',
+                'https://pixabay.com/get/g4b267bfc039a7926b9b502c49ad0215d5b83fd604fa4816b87fce5520c6f3dd55a01c87cc9b86b02c31111e392daebbaa8f5ca9250978f37cab289773b080ab4_1280.jpg'
+            ],
+            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            detailedSpecs: {
+                'Input': {
+                    'PV Input Voltage': '50-450Vdc',
+                    'MPPT Voltage Range': '60-380Vdc',
+                    'Max PV Input Power': '9000W',
+                    'Max Input Current': '2x25A'
+                },
+                'Output': {
+                    'AC Output Voltage': '220/230/240VAC',
+                    'Rated Power': '6000W',
+                    'Surge Power': '12000W (10s)',
+                    'Frequency': '50/60Hz'
+                },
+                'Battery': {
+                    'Battery Voltage': '48Vdc',
+                    'Battery Type': 'Lead Acid / Lithium',
+                    'Max Charge Current': '120A',
+                    'Max Discharge Current': '120A'
+                }
+            },
+            catalog: '/downloads/MEGA-6KW-Catalog.pdf',
+            datasheet: '/downloads/MEGA-6KW-Datasheet.pdf'
         },
         {
             name: 'MEGA-8KW',
@@ -22,7 +50,34 @@ const productData = {
             features: ['2 Independent AC Inputs', '2 MPPT Trackers', 'Touchscreen', 'WiFi Monitoring', 'Parallel Function'],
             warranty: '5 years',
             dimensions: '500x483x260mm',
-            weight: '38kg'
+            weight: '38kg',
+            images: [
+                'https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg',
+                'https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg',
+                'https://pixabay.com/get/g4b267bfc039a7926b9b502c49ad0215d5b83fd604fa4816b87fce5520c6f3dd55a01c87cc9b86b02c31111e392daebbaa8f5ca9250978f37cab289773b080ab4_1280.jpg'
+            ],
+            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            detailedSpecs: {
+                'Input': {
+                    'PV Input Voltage': '50-450Vdc',
+                    'MPPT Voltage Range': '60-380Vdc',
+                    'Max PV Input Power': '12000W',
+                    'Max Input Current': '2x30A'
+                },
+                'Output': {
+                    'AC Output Voltage': '220/230/240VAC',
+                    'Rated Power': '8000W',
+                    'Surge Power': '16000W (10s)',
+                    'Frequency': '50/60Hz'
+                },
+                'Battery': {
+                    'Battery Voltage': '48Vdc',
+                    'Battery Type': 'Lead Acid / Lithium',
+                    'Max Charge Current': '145A',
+                    'Max Discharge Current': '145A'
+                }
+            },
+            certifications: ['CE', 'UL', 'TUV', 'IEC 62109']
         },
         {
             name: 'MEGA-10KW',
@@ -170,7 +225,38 @@ const productData = {
             efficiency: '99.5%',
             mppt_range: '60-150Vdc',
             features: ['Auto Recognition', 'Temperature Compensation', 'USB Monitoring', 'Bluetooth'],
-            warranty: '5 years'
+            warranty: '5 years',
+            images: [
+                'https://pixabay.com/get/g18cfaee0ec58a55dac867cb010b9fe0f167673c4913bfd710bcf2d65d5cb163d4ac48a8b5e8e15060dff8f7e31033527099c852e5ec5dabfcc78dce6aec7b142_1280.jpg',
+                'https://pixabay.com/get/g34b778ed9b2168c572c087b153a587f6fab56c1a5c00411542699c7cba7ce783a632f78a3f541b6150d4a9414656994b6836127b88f3b9e2423b9c002fa094d5_1280.jpg',
+                'https://pixabay.com/get/g40a3bc7d37cc90e9f39ad90b0c898ba5d38a81fea861f41783b4b0f245bd6cf9317eb79f31800390f287d9bc23f1e486020a7820f46fb7ad94df73be9f291bec_1280.jpg'
+            ],
+            video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            detailedSpecs: {
+                'Electrical Parameters': {
+                    'Rated Current': '60A',
+                    'System Voltage': '12V/24V Auto',
+                    'Max PV Input Voltage': '150Vdc',
+                    'MPPT Voltage Range': '60-150Vdc',
+                    'Self Consumption': '<10mA'
+                },
+                'Protection': {
+                    'Over Voltage Protection': 'Yes',
+                    'Reverse Polarity': 'Yes',
+                    'Short Circuit Protection': 'Yes',
+                    'Over Temperature': 'Yes',
+                    'Battery Reverse': 'Yes'
+                },
+                'Physical': {
+                    'Dimensions': '240x168x75mm',
+                    'Weight': '1.8kg',
+                    'Operating Temperature': '-35°C to +55°C',
+                    'IP Rating': 'IP32'
+                }
+            },
+            certifications: ['CE', 'RoHS', 'FCC'],
+            catalog: '/downloads/EV-MPPT-60A-Catalog.pdf',
+            datasheet: '/downloads/EV-MPPT-60A-Datasheet.pdf'
         },
         {
             name: 'EV-MPPT-100A',
